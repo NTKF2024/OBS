@@ -2,25 +2,207 @@
   $(function () {
 
     const questions = [
-    { id:"q1", text:"新しいアイデアを思いつくのが好きだ。", types:["INN"] },
-    { id:"q2", text:"データを集めて分析し、根拠ある結論を出すのが得意だ。", types:["ANA"] },
-    { id:"q3", text:"物事をスケジュール通りに進めるのが得意だ。", types:["COO"] },
-    { id:"q4", text:"人の気持ちに寄り添い、サポートするのが好きだ。", types:["CAR"] },  
-    { id:"q5", text:"論理的に筋道立てて物事を説明できる。", types:["ANA","COO"] }
-
-    // { id:"q5", text:"手を動かしてモノや仕組みを作るのが好きだ。", types:["MAK"] },
-    // { id:"q6", text:"目標を掲げ、営業や交渉で成果を出すのが好きだ。", types:["CHA"] },
-    // { id:"q7", text:"変化の中で素早く試行錯誤するのが苦にならない。", types:["INN","CHA"] },
-    // { id:"q8", text:"論理的に筋道立てて物事を説明できる。", types:["ANA","COO"] },
-    // { id:"q9", text:"チームや部門間の調整役になることが多い。", types:["COO"] },
-    // { id:"q10", text:"誰かの役に立てた実感が原動力になる。", types:["CAR"] },
-    // { id:"q11", text:"仕組みや機械の構造を理解するのが楽しい。", types:["MAK","ANA"] },
-    // { id:"q12", text:"失敗を恐れず、リスクを取って挑戦できる。", types:["CHA","INN"] },
-    // { id:"q13", text:"細かい手順や品質基準を守ることに安心感がある。", types:["MAK","COO"] },
-    // { id:"q14", text:"相手の反応を見て、伝え方を柔軟に変えられる。", types:["CHA","CAR"] },
-    // { id:"q15", text:"将来のビジョンを描き、周囲を巻き込める。", types:["INN","CHA"] }
+    { id:"q1", text:"何かを作ったり、アイデアを形にするのが好きだ。"},
+    { id:"q2", text:"ゲームやアプリがどう動いているか気になる。" },
+    { id:"q3", text:"絵、デザイン、見た目の工夫をするのが好きだ。"},
+    { id:"q4", text:"パズルや謎解き、論理的な問題を解くのが得意だ。" },  
+    { id:"q5", text:"新しいガジェットやPCを見るとワクワクする。 " },
+    { id: "q6", text: "人の相談にのったりサポートするのが好きだ。" },
+    { id: "q7", text: "友達同士の話し合いで、まとめ役になることが多い。" },
+    { id: "q8", text: "みんなでワイワイ話すより、人と1対1で話す方が好きだ。" },
+    { id: "q9", text: "誰かにわかりやすく教えるのが得意だ。" },
+    { id: "q10", text: "新しいことを調べて知識を深めるのが好きだ。" },
+    { id: "q11", text: "1つの作業に集中して取り組むのが向いていると思う。" },
+    { id: "q12", text: "チームで何かを作り上げるのが好きだ。" },
+    { id: "q13", text: "自分で考え工夫して、よりよいやり方を見つけるのが好きだ。" },
+    { id: "q14", text: "人の役に立てると嬉しいと感じる。" },
+    { id: "q15", text: "形のないもの（サービス・仕組み）を作ることに興味がある。" }
     ];
 
+    // ];
+    const newQuestions = {
+      q1: { // 何かを作ったり、アイデアを形にするのが好き
+    ノリノリペンギン: 1.0,
+    ゲームマスターキツネ: 0.5,
+    クリエイティブアルパカ: 0.5,
+    ロジカルシマウマ: 0.0,
+    テックコアラ: 0.0,
+    サポートハリネズミ: 0.0,
+    ノリノリイルカ: 0.0,
+    チームリーダーシバ: 0.1,
+    ハッピーパンダ: 0.1
+  },
+    q2: { // ゲームやアプリがどう動いているか気になる
+    ノリノリペンギン: 1.0,
+    ゲームマスターキツネ: 1.0,
+    クリエイティブアルパカ: 0.3,
+    ロジカルシマウマ: 0.3,
+    テックコアラ: 0.5,
+    サポートハリネズミ: 0.3,
+    ノリノリイルカ: 0.0,
+    チームリーダーシバ: 0.1,
+    ハッピーパンダ: 0.1
+  },
+
+  q3: { // 絵・デザイン・見た目の工夫
+    ノリノリペンギン: 0.3,
+    ゲームマスターキツネ: 0.3,
+    クリエイティブアルパカ: 1.0,
+    ロジカルシマウマ: 0.0,
+    テックコアラ: 0.0,
+    サポートハリネズミ: 0.0,
+    ノリノリイルカ: 0.3,
+    チームリーダーシバ: 0.1,
+    ハッピーパンダ: 0.1
+  },
+
+  q4: { // パズル・論理的思考
+    ノリノリペンギン: 0.8,
+    ゲームマスターキツネ: 0.8,
+    クリエイティブアルパカ: 0.2,
+    ロジカルシマウマ: 1.0,
+    テックコアラ: 0.5,
+    サポートハリネズミ: 0.3,
+    ノリノリイルカ: 0.0,
+    チームリーダーシバ: 0.3,
+    ハッピーパンダ: 0.1
+  },
+
+  q5: { // ガジェット・PC好き
+    ノリノリペンギン: 0.5,
+    ゲームマスターキツネ: 0.5,
+    クリエイティブアルパカ: 0.1,
+    ロジカルシマウマ: 0.0,
+    テックコアラ: 1.0,
+    サポートハリネズミ: 0.5,
+    ノリノリイルカ: 0.0,
+    チームリーダーシバ: 0.1,
+    ハッピーパンダ: 0.1
+  },
+
+  q6: { // 人の相談にのる
+    ノリノリペンギン: 0.1,
+    ゲームマスターキツネ: 0.1,
+    クリエイティブアルパカ: 0.3,
+    ロジカルシマウマ: 0.3,
+    テックコアラ: 0.5,
+    サポートハリネズミ: 1.0,
+    ノリノリイルカ: 0.8,
+    チームリーダーシバ: 0.5,
+    ハッピーパンダ: 1.0
+  },
+
+  q7: { // まとめ役
+    ノリノリペンギン: 0.1,
+    ゲームマスターキツネ: 0.1,
+    クリエイティブアルパカ: 0.1,
+    ロジカルシマウマ: 0.5,
+    テックコアラ: 0.3,
+    サポートハリネズミ: 0.3,
+    ノリノリイルカ: 0.5,
+    チームリーダーシバ: 1.0,
+    ハッピーパンダ: 0.5
+  },
+
+  q8: { // 1対1が好き
+    ノリノリペンギン: 0.3,
+    ゲームマスターキツネ: 0.3,
+    クリエイティブアルパカ: 0.3,
+    ロジカルシマウマ: 0.5,
+    テックコアラ: 0.5,
+    サポートハリネズミ: 0.8,
+    ノリノリイルカ: 0.1,
+    チームリーダーシバ: 0.1,
+    ハッピーパンダ: 0.8
+  },
+
+  q9: { // 教えるのが得意
+    ノリノリペンギン: 0.3,
+    ゲームマスターキツネ: 0.3,
+    クリエイティブアルパカ: 0.3,
+    ロジカルシマウマ: 0.5,
+    テックコアラ: 0.5,
+    サポートハリネズミ: 1.0,
+    ノリノリイルカ: 0.3,
+    チームリーダーシバ: 0.5,
+    ハッピーパンダ: 1.0
+  },
+
+  q10: { // 調べて知識を深める
+    ノリノリペンギン: 0.8,
+    ゲームマスターキツネ: 0.8,
+    クリエイティブアルパカ: 0.5,
+    ロジカルシマウマ: 1.0,
+    テックコアラ: 0.8,
+    サポートハリネズミ: 0.5,
+    ノリノリイルカ: 0.1,
+    チームリーダーシバ: 0.5,
+    ハッピーパンダ: 0.5
+  },
+
+  q11: { // 集中作業
+    ノリノリペンギン: 1.0,
+    ゲームマスターキツネ: 0.8,
+    クリエイティブアルパカ: 0.8,
+    ロジカルシマウマ: 0.8,
+    テックコアラ: 0.5,
+    サポートハリネズミ: 0.3,
+    ノリノリイルカ: 0.0,
+    チームリーダーシバ: 0.3,
+    ハッピーパンダ: 0.3
+  },
+
+  q12: { // チームで作る
+    ノリノリペンギン: 0.8,
+    ゲームマスターキツネ: 0.8,
+    クリエイティブアルパカ: 0.8,
+    ロジカルシマウマ: 0.5,
+    テックコアラ: 0.5,
+    サポートハリネズミ: 0.5,
+    ノリノリイルカ: 0.8,
+    チームリーダーシバ: 1.0,
+    ハッピーパンダ: 0.8
+  },
+
+  q13: { // 改善・工夫
+    ノリノリペンギン: 1.0,
+    ゲームマスターキツネ: 0.8,
+    クリエイティブアルパカ: 0.8,
+    ロジカルシマウマ: 1.0,
+    テックコアラ: 0.8,
+    サポートハリネズミ: 0.5,
+    ノリノリイルカ: 0.3,
+    チームリーダーシバ: 0.8,
+    ハッピーパンダ: 0.5
+  },
+
+  q14: { // 人の役に立つ
+    ノリノリペンギン: 0.3,
+    ゲームマスターキツネ: 0.3,
+    クリエイティブアルパカ: 0.3,
+    ロジカルシマウマ: 0.5,
+    テックコアラ: 0.8,
+    サポートハリネズミ: 1.0,
+    ノリノリイルカ: 0.8,
+    チームリーダーシバ: 0.8,
+    ハッピーパンダ: 1.0
+  },
+
+  q15: { // 形のないものを作る
+    ノリノリペンギン: 1.0,
+    ゲームマスターキツネ: 0.8,
+    クリエイティブアルパカ: 0.8,
+    ロジカルシマウマ: 1.0,
+    テックコアラ: 0.3,
+    サポートハリネズミ: 0.3,
+    ノリノリイルカ: 0.5,
+    チームリーダーシバ: 0.8,
+    ハッピーパンダ: 0.5
+  }
+
+
+};
+const totalScores = {};
 
 
       // 回答結果を格納する配列
@@ -32,11 +214,11 @@
   // 質問を表示する関数
   function showQuestion(index) {
     const question = questions[index];
-    if (!question) {
-      // 全質問終了時の結果表示
-      showResults();
-      return;
-    }
+    // if (!question) {
+    //   // 全質問終了時の結果表示
+    //   showResults();
+    //   return;
+    // }
 
 
   const html = `
@@ -49,7 +231,6 @@
           <label class="scale-label">あてはまる</label>
         </div>
         <div class="button-container">
-            <button id="previousBtn" class="prev-btn">戻る</button>
             ${index === questions.length - 1 
           ? '<button id="seeResultBtn" class="result-btn">結果を見る</button>'
           : '<button id="nextBtn" class="next-btn">次へ</button>'}
@@ -60,27 +241,6 @@
     container.hide().html(html).fadeIn("slow");
   }
 
-  // 結果表示関数
-  function showResults() {
-    const total = userAnswers.reduce((sum, a) => sum + Number(a.value), 0);
-    const average = (total / userAnswers.length).toFixed(2);
-
-    const html = `
-      <div class="question-box active">
-        <h2>回答結果</h2>
-        <ul>
-          ${userAnswers.map((a, i) => `
-            <li>
-              質問${i + 1}: ${questions[i].text}<br>
-              → スコア ${a.value}（タイプ: ${questions[i].types.join(", ")}）
-            </li>
-          `).join("")}
-        </ul>
-      </div>
-    `;
-
-    container.hide().html(html).fadeIn("slow");
-  }
 
   // 初回質問表示
   showQuestion(currentIndex);
@@ -102,69 +262,23 @@
   $(document).on("click", "#nextBtn", function () {
     const value = $("#rangeInput").val();
     const question = questions[currentIndex];
-
-    // 既に同じ question.id の回答が存在するか確認
-    const existingIndex = userAnswers.findIndex(ans => ans.id === question.id);
-
-    if (existingIndex !== -1) {
-        // 既存の回答を更新
-        userAnswers[existingIndex].value = value;
-        userAnswers[existingIndex].types = question.types;
-    } else {
-        // 新しい回答を追加
-        userAnswers.push({ id: question.id, value, types: question.types });
-    }
-
+    answerQuestion(question,value)
+    // if(value == 2) {
+    //   answerYes(question)
+    // }
 
     // 次の質問へ
     currentIndex++;
     showQuestion(currentIndex);
   });
-  // 「戻る」ボタン押下時
-    $(document).on("click", "#previousBtn", function () {
-    const value = $("#rangeInput").val();
-    // 次の質問へ
-    // currentIndex を減らす
-    currentIndex--;
-
-    // もし負の値になったら最初に戻らないよう制御
-    if (currentIndex < 0) currentIndex = 0;
-
-    // 1つ前の質問を表示
-    showQuestion(currentIndex);
-    const question = questions[currentIndex];
-
-
-    // 既に同じ question.id の回答が存在するか確認
-    const existingIndex = userAnswers.findIndex(ans => ans.id === question.id);
-
-    if (existingIndex !== -1) {
-        // 既存の回答を更新
-        userAnswers[existingIndex].value = value;
-        userAnswers[existingIndex].types = question.types;
-    } else {
-        // 新しい回答を追加
-        userAnswers.push({ id: question.id, value, types: question.types });
-    }
-
-  });
+ 
 
     $(document).on("click", "#seeResultBtn", function () {
-        saveAnswer(); // 念のため最新回答も保存
-        topresult = calculateResult(userAnswers);
-
-        // 回答をオブジェクト形式に変換
-        const answersObj = {};
-        userAnswers.forEach(a => {
-        answersObj[a.id] = a.value;
-        });
-
-        // 未回答がある場合は遷移しない
-        const unanswered = Object.values(answersObj).filter(v => v === null || v === undefined).length;
-        if (unanswered > 0) return;
+       // saveAnswer(); // 念のため最新回答も保存
+        topTestResult = calculateTopResult();
 
         // sessionStorage に保存
-        sessionStorage.setItem("careerQuizAnswers_v1", JSON.stringify(topresult));
+        sessionStorage.setItem("careerQuizAnswers_v1", topTestResult);
         sessionStorage.setItem("careerQuizMeta_v1", JSON.stringify({
         version: "1.0.0",
         timestamp: Date.now()
@@ -173,56 +287,48 @@
         // 結果ページへ遷移
         window.location.href = "result.html";
   });
-  function saveAnswer() {
-    const question = questions[currentIndex];
-    const value = $("#rangeInput").val();
 
-    // 既存回答を更新、なければ追加
-    const existingIndex = userAnswers.findIndex(a => a.id === question.id);
-    if (existingIndex !== -1) {
-        userAnswers[existingIndex].value = value;
+function answerQuestion(questionId,isYes) {
+  const questionNo = questionId.id;
+  const scoreMap = newQuestions[questionNo];
+    Object.entries(scoreMap).forEach(([character, score]) => {
+     // 初期化
+      if (totalScores[character] === undefined) {
+        totalScores[character] = 0;
+      }
+
+    // Yes → 加算 / No → 減算
+    if(isYes == 2) {
+          totalScores[character] +=  score;
     } else {
-        userAnswers.push({ id: question.id, value: value, types: question.types });
+       totalScores[character] -=  score;
     }
 
+  });
+};
+function answerYes(questionId) {
+  const questionNo = questionId.id;
+  const scoreMap = newQuestions[questionNo];
+  if(scoreMap) {
+    Object.entries(scoreMap).forEach(([character, score]) => {
+      // 初期化
+      if (!totalScores[character]) {
+        totalScores[character] = 0;
+      }
+      // 加算
+      totalScores[character] += score;
+    
+    });
+  }
+
+}
+function  calculateTopResult() {
+  const result = Object.entries(totalScores)
+  .sort((a, b) => b[1] - a[1])[0];
+
+  return result[0]
+
 };
 
-function calculateResult(answers) {
-    // === 平均スコア集計 ===
-    let typeScores = {};
-    let typeData = {};
-    for( const q of answers) {
-        const score = parseInt(q.value)
-          if (score === undefined) continue; // 未回答ならスキップ
-            typesLength = q.types.length;
-
-            q.types.forEach(type => {
-                if (!typeData[type]) {
-                typeData[type] = { sum: 0, count: 0 };
-                }
-                typeData[type].sum += score;
-                typeData[type].count += 1;
-            });
-        }
-
-            // 平均スコアを算出
-            let avgScores = {};
-            for (const [type, data] of Object.entries(typeData)) {
-                avgScores[type] = data.sum / data.count;
-            }
-
-            // === 結果ソート ===
-            const ranked = Object.entries(avgScores)
-            .sort((a, b) => b[1] - a[1]);
-
-            // 上位3タイプを取得
-            const top3 = ranked.slice(0, 3);
-
-            // === 表示 ===
-            console.log("タイプ別平均スコア：", avgScores);
-            console.log("上位3タイプ：", top3);
-
-    return top3
-};
 
 })

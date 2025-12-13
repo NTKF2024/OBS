@@ -1,11 +1,58 @@
 const TYPES = {
-    INN: { name: "イノベーター型（創造・企画）", about: "新しい発想で価値を生み出すことに喜びを感じ、未知の領域で試行錯誤できます。変化を好み、ビジョンを描いて周囲を巻き込みます。", examples: ["新規事業企画", "プロダクトマネージャー", "UX/UIデザイナー", "リサーチ＆R&D"],image:'image/dog.png' },
-    ANA: { name: "アナリスト型（分析・戦略）", about: "情報を収集・整理し、論理的に結論を導くのが得意。仮説検証・再現性・精度に価値を置きます。", examples: ["データアナリスト", "BI/アナリティクス", "経営企画", "リサーチャー"],image:'image/dog.png' },
-    COO: { name: "コーディネーター型（運営・推進）", about: "関係者を束ね、計画に沿って物事を前進させるのが得意。段取り・品質・リスク管理を重視します。", examples: ["プロジェクトマネージャー", "BizOps/バックオフィス", "スクラムマスター", "カスタマーオペレーション"],image:'image/dog.png' },
-    CAR: { name: "ケアサポーター型（支援・奉仕）", about: "相手の立場に立って考え、丁寧に寄り添う支援が強み。信頼関係を築き、長期的な満足を重視します。", examples: ["教育/研修", "看護・福祉", "カスタマーサクセス", "人事（育成）"],image:'image/dog.png' }, 
-    MAK: { name: "メーカー/クラフター型（実務・職人）", about: "手を動かし、確かな品質のアウトプットを作ることに喜び。仕組み・構造を理解し、地道な改善を続けられます。", examples: ["製造/現場", "エンジニアリング", "品質管理", "クラフト/施工"],image:'image/dog.png' }, 
-    CHA: { name: "チャレンジャー型（営業・起業）", about: "目標達成に向けて行動量を惜しまず、交渉や説得に強み。不確実性を恐れず、チャンスを掴みにいきます。", examples: ["法人営業", "起業/事業開発", "アカウントマネージャー", "プロモーション/広報"],image:'image/dog.png' } 
-};
+    ノリノリペンギン: { 
+      about: "新しいものを作るのが大好き！ワクワクしながらコツコツ作る職人タイプ。",
+      detail: "スマホアプリやWebサイトを「実際に動く形」で作るエンジニア。アイデアをプログラムに変えて、みんなが使える便利なサービスを生み出す“クリエイター寄りの技術者”。目の前の画面がどんどん完成していくのが楽しく、コツコツ作るのが好きな人には超向いてる。「こんな機能あったら便利じゃない？」を形にできる仕事で、世の中の生活を少しずつ良くしていける。 " ,
+      examples: ["Web","アプリエンジニア"],
+      image:'image/ペンギン.png'
+    },
+    ゲームマスターキツネ: { 
+      about: "発想がユニークでゲームの仕組みを考えるのが得意！",
+      detail: "ゲームのキャラクターがどう動くか、戦闘の仕組み、ストーリーの進み方など“ゲームの裏側”を作る仕事。プログラムでゲーム世界を組み立てて、プレイヤーが「お、楽しい！」と感じる仕掛けをつくっていく。発想力とロジックの両方が必要で、頭の中の世界がそのまま遊べる形になっていく瞬間は最高のやりがい。ゲーム好きなら一度は憧れる「夢を現実に変えるお仕事」。 " ,
+      examples: ["データエンジニア"],
+      image:'image/キツネ.png' },
+    クリエイティブアルパカ: {
+        about: "やわらかい感性とセンス。みんなが使いやすい形に整える天才。",
+        detail: "「かわいい」「使いやすい」「迷わない」画面をつくるために、色・形・動きなどを細かく工夫していく仕事。センスや発想力はもちろん、“使う人の気持ちを考える力”がとても大切。自分が作ったデザインが多くの人にとっての“便利”になる、クリエイティブで影響力のある職種。",
+        examples: ["UIデザイナー", "UXデザイナー"],
+        image: "image/アルパカ.png"
+    },  
+    ロジカルシマウマ: {
+      about: "問題や謎をスッと整理して、白黒ハッキリ決める論理派。",
+      detail: "企業の課題を見つけて「こうすればうまくいきますよ」とITで解決策を提案する仕事。パズルを解くように問題を整理し、最適なシステムや仕組みを考えて会社の働き方そのものを変えていく。論理的に考えるのが得意な人や、改善アイデアを考えるのが好きな人にピッタリで、いろんな業界の裏側を知れるのも魅力。",
+      examples: ["ITコンサルタント"],
+      image: "image/シマウマ.png"
+    },
+    テックコアラ: {
+      about: "機械やガジェットが大好き。困っている人を見ると助けちゃうお助けマン。",
+      detail: "「パソコンが動かない」「Wi-Fiにつながらない」といったトラブルを解決したり、新しいツールを導入して働きやすい環境を整える仕事。ガジェット好き・機械好きにはたまらない職種で、社員全員から頼られる存在。裏方から会社を支える、縁の下の力持ち。",
+      examples: ["情シス", "社内IT"],
+      image: "image/コアラ.png"
+    },
+    サポートハリネズミ: {
+      about: "優しく寄り添って、ていねいにサポートする癒し担当。",
+      detail: "ITの操作に困っている人に寄り添い、分かりやすく説明しながら問題を解決する仕事。技術力も使うが、それ以上に“優しさ”や“聞く力”が活きる職種。相手の不安を取り除き、何度も「ありがとう」と言われる現場の癒やし系サポーター。",
+      examples: ["ITサポート", "ヘルプデスク"],
+      image: "image/ハリネズミ.png"
+    },
+    ノリノリイルカ: {
+      about: "人と話すのが好きで、明るく元気に価値を伝えるコミュ力王。",
+      detail: "お客様と話しながら困りごとや課題を見つけ、ぴったりのサービスや商品を提案する仕事。明るさやコミュニケーション力を活かしたい人に向いている。ただ売るだけでなく、“お客様の未来を良くする手伝いをする”のが営業の大きな役割。",
+      examples: ["営業"],
+      image: "image/イルカ.png"
+    },
+    チームリーダーライオン: {
+      about: "チームをまとめるのが得意な、頼れるまとめ役。",
+      detail: "仕事を円滑に進めるためにメンバーの役割分担やスケジュールを調整する仕事。文化祭の実行委員長のように、みんなが力を発揮できる環境を整えるのが役割。強いリーダーシップよりも、気遣いや調整力が活きる職種で、チームで成果を出す達成感を味わえる。",
+      examples: ["プロジェクトマネージャー"],
+      image: "image/ライオン.png"
+    },
+    ハッピーパンダ: {
+      about: "ゆっくり丁寧に教えるのがうまい、人を笑顔にするサポート役。",
+      detail: "サービスを使い始めたお客様が成果を出せるよう、操作説明や活用方法を一緒に考えながら寄り添う仕事。やさしくて面倒見のいいタイプが活躍できる職種で、お客様の成長を間近で見られる“伴走型サポーター”。",
+      examples: ["カスタマーサクセス"],
+      image: "image/パンダ.png"
+    }
+}
 
 // sessionStorage から回答を取得
 const answersJSON = sessionStorage.getItem("careerQuizAnswers_v1");
@@ -16,41 +63,23 @@ const container = document.getElementById("answers-list");
 if (!answersJSON) {
   container.innerHTML = "<p>回答が見つかりません。</p>";
 } else {
-  const answers = JSON.parse(answersJSON);
-  const meta = metaJSON ? JSON.parse(metaJSON) : {};
-    // 上位3件を抽出
-    const top3 = Object.entries(answers)
-        .sort((a, b) => b[1] - a[1]) // スコア降順
-        .slice(0, 3);                // 上位3件
 
-    top3.forEach(([id, value], index) => {
-        const type = TYPES[value[0]];
-        console.log(type)
-        if (!type) return;
+  const animal = TYPES[answersJSON];
 
-    // 対応するボックスを取得（id="type1" "type2" "type3"）
-    const box = document.getElementById(`result${index + 1}`);
-      console.log(`index=${index}`, `result${index + 1}`);
+  console.log(animal);
+  const resultBox = document.getElementById("result1");
 
-    if (box) {
-        box.querySelector(".type-name").textContent = `${type.name}`;
-        box.querySelector(".type-about").textContent = type.about;
-         // ▼ 画像設定ロジック追加
-        const imageElement = box.querySelector(".type-image");
-        if (imageElement && type.image) {
-            imageElement.src = type.image;
-            imageElement.alt = type.name;
+  resultBox.querySelector(".type-name").textContent = answersJSON;
+  resultBox.querySelector(".type-about").textContent = animal.about;
+  resultBox.querySelector(".type-job-detail").textContent = animal.detail;
+  resultBox.querySelector(".type-examples").textContent = animal.examples;
+    const imageElement = resultBox.querySelector(".type-image");
+        if (imageElement && animal.image) {
+            imageElement.src = animal.image;
+            imageElement.alt = animal.name;
         }
 
-        const examplesList = box.querySelector(".type-examples");
-        examplesList.innerHTML = ""; // 初期化
-        type.examples.forEach(job => {
-            const li = document.createElement("li");
-            li.textContent = job;
-            examplesList.appendChild(li);
-        });
-    }
-    });
+
 
 }
 

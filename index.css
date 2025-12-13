@@ -110,23 +110,11 @@ strong {
 
 .button-container {
   display: flex;
-  justify-content: space-between; /* 両端に配置 */
+  justify-content: center; /* 両端に配置 */
   gap: 10px; /* ボタン間の余白（任意） */
   margin-top: 20px;
 }
 
-.prev-btn, .next-btn {
-
-  padding: 12px;
-  background-color: #aed9e9;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  text-align: center;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
 .next-btn {
 
   padding: 10px;
@@ -373,6 +361,16 @@ ul {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
+.type-box-image{
+  width: 100%;
+  max-width: 600px;
+  height: 400px;        
+}
+.type-overview-image {
+   width: 100%;
+  height: 100%;
+  object-fit: contain;  
+}
 .type-name {
   font-size: 1.5em;
   font-weight: bold;
