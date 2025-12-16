@@ -372,10 +372,11 @@ ul {
   object-fit: contain;  
 }
 .type-name {
-  font-size: 1.5em;
+  font-size: 3.0em;
   font-weight: bold;
-  color: #333;
+  color: #21c2eb;
   margin-bottom: 10px;
+  text-align: center;
 }
 
 .type-about {
@@ -384,26 +385,32 @@ ul {
   color: #4ba2ff;
   line-height: 1.6;
   margin-bottom: 15px;
+   text-align: center;
 }
 
 .type-examples {
   list-style-type: "💡 "; /* 各職種の前にアイコンを付ける */
   padding-right: 0;
   color: #444;
+   text-align: center;
+    text-align: center;
 }
 
 .type-examples li {
   margin-bottom: 10px;
   margin-left: 0pt;
+   text-align: center;
 }
 
 .type-jobs-about {
-   text-decoration: underline;
+
    color: #555;
+    text-align: center;
 }
 .type-jobs-type {
-   text-decoration: underline;
+
    color: #555;
+    text-align: center;
 }
 .type-examples-overview{
    list-style-type: "💡 ";
@@ -414,4 +421,45 @@ ul {
     margin: 2px 0; /* 行間調整 → 空白が消えます */
     padding: 0;
     line-height: 1.2; /* 行間を小さめにする */
+}
+.box18{
+    margin:2em 0;
+    position: relative;
+    padding: 0.25em 1em;
+    border: solid 2px #ffcb8a;
+    border-radius: 3px 0 3px 0;
+}
+.box18:before,.box18:after
+{
+    content: '';
+    position: absolute;
+    width:10px;
+    height: 10px;
+    border: solid 2px #ffcb8a;
+    border-radius: 50%;
+}
+.box18:after {
+    top:-12px;
+    left:-12px;
+}
+.box18:before {
+    bottom:-12px;
+    right:-12px;
+}
+.box18 p {
+    margin: 0; 
+    padding: 0;
+}
+
+.box10 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #00BCD4;
+    background: #e4fcff;/*背景色*/
+    border-top: solid 6px #1dc1d6;
+    box-shadow: 0 3px 4px rgba(0, 0, 0, 0.32);/*影*/
+}
+.box10 p {
+    margin: 0; 
+    padding: 0;
 }
