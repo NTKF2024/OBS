@@ -463,3 +463,51 @@ ul {
     margin: 0; 
     padding: 0;
 }
+
+.slider-wrapper {
+  position: relative;
+  padding: 20px 0 40px;
+}
+
+/* スライダー本体 */
+.diagnosis-slider {
+  width: 100%;
+  appearance: none;
+  height: 6px;
+  background: linear-gradient(
+    to right,
+    #ddd 0%,
+    #ddd 100%
+  );
+  border-radius: 3px;
+  outline: none;
+}
+
+/* つまみ（Chrome / Edge） */
+.diagnosis-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  background: #4f46e5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* つまみ（Firefox） */
+.diagnosis-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  background: #4f46e5;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* ラベル */
+.labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #555;
+  margin-top: 12px;
+  text-align: center;
+}

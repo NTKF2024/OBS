@@ -29,7 +29,7 @@
     テックコアラ: 0.0,
     サポートハリネズミ: 0.0,
     ノリノリイルカ: 0.0,
-    チームリーダーシバ: 0.1,
+    チームリーダーライオン: 0.1,
     ハッピーパンダ: 0.1
   },
     q2: { // ゲームやアプリがどう動いているか気になる
@@ -40,7 +40,7 @@
     テックコアラ: 0.5,
     サポートハリネズミ: 0.3,
     ノリノリイルカ: 0.0,
-    チームリーダーシバ: 0.1,
+    チームリーダーライオン: 0.1,
     ハッピーパンダ: 0.1
   },
 
@@ -52,7 +52,7 @@
     テックコアラ: 0.0,
     サポートハリネズミ: 0.0,
     ノリノリイルカ: 0.3,
-    チームリーダーシバ: 0.1,
+    チームリーダーライオン: 0.1,
     ハッピーパンダ: 0.1
   },
 
@@ -64,7 +64,7 @@
     テックコアラ: 0.5,
     サポートハリネズミ: 0.3,
     ノリノリイルカ: 0.0,
-    チームリーダーシバ: 0.3,
+    チームリーダーライオン: 0.3,
     ハッピーパンダ: 0.1
   },
 
@@ -76,7 +76,7 @@
     テックコアラ: 1.0,
     サポートハリネズミ: 0.5,
     ノリノリイルカ: 0.0,
-    チームリーダーシバ: 0.1,
+    チームリーダーライオン: 0.1,
     ハッピーパンダ: 0.1
   },
 
@@ -88,7 +88,7 @@
     テックコアラ: 0.5,
     サポートハリネズミ: 1.0,
     ノリノリイルカ: 0.8,
-    チームリーダーシバ: 0.5,
+    チームリーダーライオン: 0.5,
     ハッピーパンダ: 1.0
   },
 
@@ -100,7 +100,7 @@
     テックコアラ: 0.3,
     サポートハリネズミ: 0.3,
     ノリノリイルカ: 0.5,
-    チームリーダーシバ: 1.0,
+    チームリーダーライオン: 1.0,
     ハッピーパンダ: 0.5
   },
 
@@ -112,7 +112,7 @@
     テックコアラ: 0.5,
     サポートハリネズミ: 0.8,
     ノリノリイルカ: 0.1,
-    チームリーダーシバ: 0.1,
+    チームリーダーライオン: 0.1,
     ハッピーパンダ: 0.8
   },
 
@@ -124,7 +124,7 @@
     テックコアラ: 0.5,
     サポートハリネズミ: 1.0,
     ノリノリイルカ: 0.3,
-    チームリーダーシバ: 0.5,
+    チームリーダーライオン: 0.5,
     ハッピーパンダ: 1.0
   },
 
@@ -136,7 +136,7 @@
     テックコアラ: 0.8,
     サポートハリネズミ: 0.5,
     ノリノリイルカ: 0.1,
-    チームリーダーシバ: 0.5,
+    チームリーダーライオン: 0.5,
     ハッピーパンダ: 0.5
   },
 
@@ -148,7 +148,7 @@
     テックコアラ: 0.5,
     サポートハリネズミ: 0.3,
     ノリノリイルカ: 0.0,
-    チームリーダーシバ: 0.3,
+    チームリーダーライオン: 0.3,
     ハッピーパンダ: 0.3
   },
 
@@ -160,7 +160,7 @@
     テックコアラ: 0.5,
     サポートハリネズミ: 0.5,
     ノリノリイルカ: 0.8,
-    チームリーダーシバ: 1.0,
+    チームリーダーライオン: 1.0,
     ハッピーパンダ: 0.8
   },
 
@@ -172,7 +172,7 @@
     テックコアラ: 0.8,
     サポートハリネズミ: 0.5,
     ノリノリイルカ: 0.3,
-    チームリーダーシバ: 0.8,
+    チームリーダーライオン: 0.8,
     ハッピーパンダ: 0.5
   },
 
@@ -184,7 +184,7 @@
     テックコアラ: 0.8,
     サポートハリネズミ: 1.0,
     ノリノリイルカ: 0.8,
-    チームリーダーシバ: 0.8,
+    チームリーダーライオン: 0.8,
     ハッピーパンダ: 1.0
   },
 
@@ -196,7 +196,7 @@
     テックコアラ: 0.3,
     サポートハリネズミ: 0.3,
     ノリノリイルカ: 0.5,
-    チームリーダーシバ: 0.8,
+    チームリーダーライオン: 0.8,
     ハッピーパンダ: 0.5
   }
 
@@ -225,16 +225,31 @@ const totalScores = {};
       <div class="question-box active">
         <p>質問${index + 1}: ${question.text}</p>
 
-        <div class="slider-container">
-          <label class="scale-label">あてはまらない</label>
-          <input type="range" min="1" max="2" value="2" class="slider" id="rangeInput">
-          <label class="scale-label">あてはまる</label>
+
+        <div class="slider-wrapper">
+          <input
+            type="range"
+            min="0"
+            max="3"
+            step="1"
+            value="1"
+            class="diagnosis-slider"
+            id="questionRangeInput"
+          >
+
+          <div class="labels">
+            <span>あてはまらない</span>
+            <span>あまり<br>あてはまらない</span>
+            <span>やや<br>あてはまる</span>
+            <span>あてはまる</span>
+          </div>
         </div>
         <div class="button-container">
             ${index === questions.length - 1 
           ? '<button id="seeResultBtn" class="result-btn">結果を見る</button>'
           : '<button id="nextBtn" class="next-btn">次へ</button>'}
         </div>
+
       </div>
     `;
 
@@ -262,7 +277,9 @@ const totalScores = {};
   $(document).on("click", "#nextBtn", function () {
     const value = $("#rangeInput").val();
     const question = questions[currentIndex];
-    answerQuestion(question,value)
+    const answerValue =  $("#questionRangeInput").val();
+    // answerQuestion(question,value)
+    calculateValue(question,answerValue)
     // if(value == 2) {
     //   answerYes(question)
     // }
@@ -298,10 +315,35 @@ function answerQuestion(questionId,isYes) {
       }
 
     // Yes → 加算 / No → 減算
+      // Yes → 加算 / No → 減算
     if(isYes == 2) {
           totalScores[character] +=  score;
     } else {
        totalScores[character] -=  score;
+    }
+  
+
+  });
+};
+function calculateValue(questionId,value) {
+  const questionNo = questionId.id;
+  const scoreMap = newQuestions[questionNo];
+    Object.entries(scoreMap).forEach(([character, score]) => {
+     // 初期化
+      if (totalScores[character] === undefined) {
+        totalScores[character] = 0;
+      }
+
+  
+      if(value == 3) {
+          totalScores[character] +=  score;
+    } else if ( value == 2) {
+        totalScores[character] +=  score / 2
+    } else if ( value == 1) {
+        totalScores[character] -=  score / 2
+    } 
+    else {
+      totalScores[character] -=  score;
     }
 
   });
